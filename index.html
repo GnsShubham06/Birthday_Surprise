@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Specially For You 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Dreamy Background -->
+  <div class="dreamy-bg"></div>
+
+  <!-- PAGE 1 -->
+  <section class="page active" id="page1">
+
+    <!-- Floating decorations -->
+    <div class="floating-elements">
+      <span>💕</span>
+      <span>✨</span>
+      <span>💖</span>
+      <span>🌸</span>
+    </div>
+
+    <div class="card dreamy-card">
+      <h1>🎂 Hey Beautiful</h1>
+      <p class="soft-text">
+        Are you ready for your birthday surprise?
+      </p>
+      <button onclick="goToPage(2)">Yes, I’m Ready 💖</button>
+    </div>
+
+  </section>
+
+<!-- PAGE 2 -->
+<section class="page" id="page2">
+  <div class="letter-wrapper">
+    <div class="letter-paper">
+      <h2>💌 A Letter For You</h2>
+      <p id="letterText"></p>
+      <button id="continueBtn" onclick="goToPage(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- Floating decorations container -->
+  <div class="letter-decor"></div>
+  <div class="sparkles"></div>
+</section>
+
+<!-- PAGE 3 – Cake / Wish choice already exists -->
+<section class="page" id="page3">
+  <div class="choice-wrapper">
+    <h2>🎂 What should we do first?</h2>
+    <div class="choices">
+      <div class="choice-card" onclick="chooseAction('cake')">
+        <div class="icon">🎂</div>
+        <p>Cut the Cake</p>
+      </div>
+      <div class="choice-card" onclick="chooseAction('wish')">
+        <div class="icon">✨</div>
+        <p>Make a Wish</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAGE 4: Cake Cutting -->
+<section class="page" id="page4">
+  <div class="cake-wrapper">
+    <h2>🎂 Cut the Cake!</h2>
+    <p>Move your cursor over the cake to cut it 🍰</p>
+    <div id="cakeContainer">
+      <img src="assets/cake.png" alt="Cake" id="cakeImage">
+    </div>
+    <p id="cakeMessage" class="hidden"></p>
+  </div>
+  <div class="cake-emojis"></div>
+  <button id="cakeContinue" class="hidden" onclick="goToPage(5)">Continue →</button>
+</section>
+
+
+<!-- PAGE 5: Make a Wish -->
+<section class="page" id="page5">
+  <div class="wish-wrapper">
+    <h2>✨ Make a Wish</h2>
+    <div id="candles">
+      <span class="candle">🕯️</span>
+      <span class="candle">🕯️</span>
+      <span class="candle">🕯️</span>
+      <span class="candle">🕯️</span>
+      <span class="candle">🕯️</span>
+    </div>
+    <p id="wishMessage">Make a wish and blow the candles 🎂</p>
+    <button id="blowButton">Blow</button>
+    <button id="wishContinue" class="hidden" onclick="goToPage(6)">Continue →</button>
+  </div>
+  <div class="wish-emojis"></div>
+</section>
+
+<!-- PAGE 6: Song Selection -->
+<section class="page" id="page6">
+  <div class="song-wrapper">
+    <h2>🎵 Choose a song for your birthday vibes!</h2>
+    <p>Pick the one that feels just right 💖</p>
+
+    <div class="song-grid">
+      <div class="song-card" data-song="assets/song1.mp3">
+        <div class="song-img-container">
+          <img src="assets/pic1.jpg" alt="Song 1">
+        </div>
+        <p>🌙✨ Night Changes</p>
+      </div>
+
+      <div class="song-card" data-song="assets/song2.mp3">
+        <div class="song-img-container">
+          <img src="assets/pic2.jpg" alt="Song 2">
+        </div>
+       <p>💃🎶 Madhubala</p>
+      </div>
+
+      <div class="song-card" data-song="assets/song3.mp3">
+        <div class="song-img-container">
+          <img src="assets/pic3.jpg" alt="Song 3">
+        </div>
+       <p>🏍️🌺 Harleys in Hawai</p>
+      </div>
+
+      <div class="song-card" data-song="assets/song4.mp3">
+        <div class="song-img-container">
+          <img src="assets/pic4.jpg" alt="Song 4">
+        </div>
+        <p>☀️🎵 DayLight</p>
+      </div>
+    </div>
+
+    <button id="songContinue" class="hidden" onclick="goToPage(7)">Continue →</button>
+  </div>
+
+  <div class="song-emojis"></div>
+</section>
+
+<!-- PAGE 7: Wishes -->
+<section class="page" id="page7">
+  <div class="wishes-wrapper">
+    <h2>💌 Some Cuteee Wishes Just for You...</h2>
+    <div class="wish-cards">
+      <div class="wish-card" data-wish="You deserve all the love and happiness today and always 💌✨">
+        <div class="wish-front">🎁</div>
+        <div class="wish-back"></div>
+      </div>
+      <div class="wish-card" data-wish="No one shine brighter than you 🌟
+Every moment with you is a little piece of magic 💝💌">
+        <div class="wish-front">🌙</div>
+        <div class="wish-back"></div>
+      </div>
+      <div class="wish-card" data-wish="May your heart feel as full as the joy you bring into my life, today and always 🌸">
+        <div class="wish-front">✨</div>
+        <div class="wish-back"></div>
+      </div>
+    </div>
+    <button id="finalLetterBtn" class="hidden" onclick="goToPage(8)">See Your Final Letter 💌</button>
+  </div>
+  <div class="wish-emojis"></div>
+</section>
+
+<!-- PAGE 8: Final Letter -->
+<section class="page" id="page8">
+  <div class="final-letter-wrapper">
+    <!-- Love letter emoji -->
+    <div class="love-letter" id="loveLetter">💌</div>
+
+    <!-- Open button -->
+    <button id="openLetterBtn">Open 💖</button>
+
+    <!-- Final message (hidden initially) -->
+    <p id="finalMessage" class="hidden">
+      I don’t even know where to start… You’re not just special, you’re magical ✨, the kind of person who makes everything brighter just by existing ☀️. From the way you care, to the way you make people feel seen 💛, to the way you just are  everything about you is amazing, and I adore you soooo much 🥹💞.
+
+Seriously… no one, absolutely no one, can ever replace you 😭💖. You mean more to me than words, more than worlds could ever express 🌍💫. Every little thing about you makes me grateful that you’re in my life 🙏💛.
+
+On your birthday, I wish you all the happiness, love, and warmth in the world 🌈💖, because you deserve every single bit of it 🥰🎉. I hope this year gives you moments that make your heart smile the way you make mine smile every single day 🥹💖✨.
+
+Thank you for being you  the kindest, sweetest, most incredible person I’ve ever known 💛🌸💫. I adore you more than I can even say 💖🥰.
+    </p>
+
+    <!-- Seal & Send button -->
+    <button id="sealSendBtn" class="hidden">Seal & Send Your Birthday Kisses 💌</button>
+  </div>
+
+  <!-- Container for floating emojis -->
+  <div class="final-emojis"></div>
+</section>
+
+
+
+
+
+  <script src="script.js"></script>
+</body>
+</html>
